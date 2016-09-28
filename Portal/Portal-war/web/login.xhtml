@@ -8,12 +8,13 @@
     </h:head>
     <h:body>
         <h:form>
+            <p:messages/>
             <h:panelGrid>
                 <h:outputLabel value="Nome"/>
-                <p:inputText value="#{loginBean.nome}"/>
+                <p:inputText value="#{loginBean.nome}" required="true" requiredMessage="Usuário é obrigatório"/>
                 <h:outputLabel value="Senha"/>
-                <p:password value="#{loginBean.senha}"/>
-                <p:commandButton value="OK" action="#{loginBean.realizarLogin()}"/>
+                <p:password value="#{loginBean.senha}" required="true" requiredMessage="Senha é obrigatória"/>
+                <p:commandButton value="OK" ajax="false" action="#{loginBean.realizarLogin()}"/>
             </h:panelGrid>
         </h:form>
     </h:body>
